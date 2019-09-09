@@ -1,5 +1,3 @@
-const cacheVersion = 'v1-pwa-dasar';
-
 const filesToCache = [
     '/',
     '/css/sb-admin-2.min.css',
@@ -12,21 +10,30 @@ const filesToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheVersion)
-      .then(function(cache) {
-        return cache.addAll(filesToCache)
-      })
-  )
+    console.log('install sukses', event);
+    event.waitUntil(
+        caches.open('appku')
+        .then(function(cache) {
+            console.log('mulai caching');
+            return cache.addAll(filesToCache);
+        })
+        .then(function() {
+            self.skipWaiting();
+        })
+    );
+});
+
+self.addEventListener('activate', function(event) {
+    console.log('aktivasi sukses', event);
+    self.skipWaiting();
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(res) {
-        if (res) return res;
-
-        return fetch(event.request);
-      })
-  );
-});
+    event.respondWith(
+        caches.match(event.request)
+        .then(function(res) {
+            if (res) return res;
+            return fetch(event.request);
+        })
+    );
+    });
