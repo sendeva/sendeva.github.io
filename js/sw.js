@@ -15,7 +15,16 @@ self.addEventListener('install', function(event) {
         caches.open('appku')
         .then(function(cache) {
             console.log('mulai caching');
-            return cache.addAll(filesToCache);
+            return cache.addAll([
+                '/',
+                '/css/sb-admin-2.min.css',
+                '/js/sb-admin-2.min.js',
+                '/vendor/jquery/jquery.min.js',
+                '/vendor/bootstrap/js/bootstrap.bundle.min.js"',
+                '/vendor/chart.js/Chart.min.js',
+                '/js/demo/chart-area-demo.js',
+                '/js/demo/chart-pie-demo.js'
+            ]);
         })
         .then(function() {
             self.skipWaiting();
