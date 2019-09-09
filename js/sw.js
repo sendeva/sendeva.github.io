@@ -8,7 +8,7 @@ const filesToCache = [
     '/vendor/bootstrap/js/bootstrap.bundle.min.js"',
     '/vendor/chart.js/Chart.min.js',
     '/js/demo/chart-area-demo.js',
-    '/js/demo/chart-pie-demo.js',
+    '/js/demo/chart-pie-demo.js'
 ];
 
 self.addEventListener('install', function(event) {
