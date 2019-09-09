@@ -20,7 +20,7 @@ self.addEventListener('install', function(event) {
                 '/css/sb-admin-2.min.css',
                 '/js/sb-admin-2.min.js',
                 '/vendor/jquery/jquery.min.js',
-                '/vendor/bootstrap/js/bootstrap.bundle.min.js"',
+                '/vendor/bootstrap/js/bootstrap.bundle.min.js',
                 '/vendor/chart.js/Chart.min.js',
                 '/js/demo/chart-area-demo.js',
                 '/js/demo/chart-pie-demo.js'
