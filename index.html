@@ -677,7 +677,7 @@
         console.log('Browser tidak mendungkung Service Worker');
     }
     else {
-        navigator.serviceWorker.register('/js/sw.js')
+        navigator.serviceWorker.register('sw.js')
         .then(function(reg) {
             console.log('Service Worker terdaftar',reg);
         })
