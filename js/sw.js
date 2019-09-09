@@ -1,14 +1,3 @@
-// const filesToCache = [
-//     '/',
-//     '/css/sb-admin-2.min.css',
-//     '/js/sb-admin-2.min.js',
-//     '/vendor/jquery/jquery.min.js',
-//     '/vendor/bootstrap/js/bootstrap.bundle.min.js"',
-//     '/vendor/chart.js/Chart.min.js',
-//     '/js/demo/chart-area-demo.js',
-//     '/js/demo/chart-pie-demo.js'
-// ];
-
 self.addEventListener('install', function(event) {
     console.log('install sukses', event);
     event.waitUntil(
@@ -37,12 +26,13 @@ self.addEventListener('activate', function(event) {
     self.skipWaiting();
 });
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-        .then(function(res) {
-            if (res) return res;
-            return fetch(event.request);
+self.addEventListener('fetch', function(e) {
+    e.respondWith(
+        fetch(e.request).catch(function() {
+            return caches.open(cacheName).then(function(cache) {
+                return cache.match(e.request);
+            })
         })
+        
     );
-    });
+});
