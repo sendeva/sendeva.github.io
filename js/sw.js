@@ -5,8 +5,8 @@ self.addEventListener('install', function(event) {
         .then(function(cache) {
             console.log('mulai caching');
             return cache.addAll([
-                './index.html',
-                './buttons.html'
+                '/index.html',
+                '/buttons.html'
 
             ]);
         })
