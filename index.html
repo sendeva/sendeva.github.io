@@ -18,6 +18,21 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+  <script>
+    if(!('serviceWorker' in navigator)) {
+        console.log('Browser tidak mendungkung Service Worker');
+    }
+    else {
+        navigator.serviceWorker.register('sw.js')
+        .then(function(reg) {
+            console.log('Service Worker terdaftar',reg);
+        })
+        .catch(function(error) {
+            console.log('Error : ' + error);
+        });
+    }
+</script>
+
 </head>
 
 <body id="page-top">
