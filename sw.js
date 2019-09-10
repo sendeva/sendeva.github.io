@@ -14,7 +14,7 @@ self.addEventListener('install', function(event) {
                 '/vendor/fontawesome-free/css/all.min.css',
                 '/js/demo/chart-area-demo.js',
                 '/js/demo/chart-pie-demo.js',
-                '/button.html'
+                '/buttons.html'
             ]);
         })
         .then(function() {
