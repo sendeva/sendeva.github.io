@@ -11,8 +11,10 @@ self.addEventListener('install', function(event) {
                 '/vendor/jquery/jquery.min.js',
                 '/vendor/bootstrap/js/bootstrap.bundle.min.js',
                 '/vendor/chart.js/Chart.min.js',
+                '/vendor/fontawesome-free/css/all.min.css',
                 '/js/demo/chart-area-demo.js',
-                '/js/demo/chart-pie-demo.js'
+                '/js/demo/chart-pie-demo.js',
+                '/button.html'
             ]);
         })
         .then(function() {
